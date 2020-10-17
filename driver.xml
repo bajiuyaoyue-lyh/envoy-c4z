@@ -1,0 +1,83 @@
+<devicedata>
+  <version>7</version>
+  <manufacturer>Enphase</manufacturer>
+  <model>Envoy</model>
+  <creator>Eric Warmenhoven (eric@warmenhoven.org)</creator>
+  <name>Enphase Envoy</name>
+  <small image_source="c4z">enphase_sm.gif</small>
+  <large image_source="c4z">enphase_lg.gif</large>
+  <control>lua_gen</control>
+  <controlmethod>ip</controlmethod>
+  <driver>DriverWorks</driver>
+  <copyright>Public Domain</copyright>
+  <created>10/16/2020 2:30 PM</created>
+  <modified>10/18/2020 11:49 AM</modified>
+  <combo>true</combo>
+  <proxies qty="1">
+    <proxy>Enphase_Envoy</proxy>
+  </proxies>
+  <config>
+    <script file="driver.lua"></script>
+    <documentation file="www/doc.rtf" />
+    <properties>
+      <property>
+        <name>Debug Mode</name>
+        <type>LIST</type>
+        <items>
+          <item>Off</item>
+          <item>On</item>
+        </items>
+        <default>Off</default>
+      </property>
+      <property>
+        <name>Serial Number</name>
+        <type>STRING</type>
+        <default></default>
+        <readonly>true</readonly>
+      </property>
+      <property>
+        <name>IP Address</name>
+        <type>STRING</type>
+        <default></default>
+        <readonly>true</readonly>
+      </property>
+      <property>
+        <name>Poll Interval</name>
+        <type>RANGED_INTEGER</type>
+        <minimum>30</minimum>
+        <maximum>600</maximum>
+        <default>30</default>
+      </property>
+    </properties>
+  </config>
+  <connections>
+    <connection>
+      <type>1</type>
+      <id>8</id>
+      <audiosource>false</audiosource>
+      <videosource>false</videosource>
+      <connectionname>Grid Status</connectionname>
+      <facing>6</facing>
+      <consumer>false</consumer>
+      <linelevel>false</linelevel>
+      <classes>
+        <class>
+          <classname>CONTACT_SENSOR</classname>
+        </class>
+      </classes>
+    </connection>
+  </connections>
+  <capabilities></capabilities>
+  <events>
+    <event>
+      <id>1</id>
+      <name>Discovered</name>
+      <description>When the Envoy has been discovered</description>
+    </event>
+    <event>
+      <id>2</id>
+      <name>Offline</name>
+      <description>When the discovered Envoy disappears</description>
+    </event>
+  </events>
+</devicedata>

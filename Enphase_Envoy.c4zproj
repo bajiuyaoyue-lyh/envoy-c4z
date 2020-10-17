@@ -1,0 +1,12 @@
+<Driver type="c4z" name="Enphase_Envoy">
+ <Items>
+  <Item type="file" name="discovery.lua" />
+  <Item type="file" name="driver.lua" />
+  <Item type="file" name="driver.xml" />
+  <Item type="file" name="envoy.lua" />
+  <Item type="file" name="event.lua" />
+  <Item type="file" name="mdns.lua" />
+  <Item type="file" name="timer.lua" />
+  <Item type="dir" c4zDir="www" name="www" recurse="true" exclude="false" />
+ </Items>
+</Driver>

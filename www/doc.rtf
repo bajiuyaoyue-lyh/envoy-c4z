@@ -1,0 +1,19 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Enphase Envoy\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Overview\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This is a simple Control4 driver to pull data from the Enphase Envoy.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The driver automatically detects the Envoy using mDNS, so no configuration of the IP address is necessary.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Configuration\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Poll Interval} The driver will periodically query the Envoy to get its status. This sets how often, in seconds, to poll the Envoy.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Grid Detection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you have an Enpower, you can add a Contact Switch sensor driver and connect it to the Grid Status contact sensor of the Envoy driver.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Driver Events\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The driver will poll the Envoy for its current status. If it fails, the driver will send an {\f1 Offline} event. When it comes back online, it will send a {\f1 Discovered} event.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Please note that the local Envoy web server can be quite slow, so you may get spurious {\f1 Offline} events. One mitigation strategy is to use a Timer. For example, when you receive an {\f1 Offline} event, start a Timer for 2 minutes. If you get a {\f1 Discovered} event, cancel the timer. If the timer expires, then you can be reasonably certain that the Envoy is offline.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Change Log\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Version 7:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Initial release\sa180\par}
+}
