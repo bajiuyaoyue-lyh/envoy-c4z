@@ -32,6 +32,6 @@ is offline.
 
 ## Change Log
 
-Version 7:
+Version 12:
 
 - Initial release

@@ -14,6 +14,6 @@
 {\pard \ql \f0 \sa180 \li0 \fi0 The driver will poll the Envoy for its current status. If it fails, the driver will send an {\f1 Offline} event. When it comes back online, it will send a {\f1 Discovered} event.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Please note that the local Envoy web server can be quite slow, so you may get spurious {\f1 Offline} events. One mitigation strategy is to use a Timer. For example, when you receive an {\f1 Offline} event, start a Timer for 2 minutes. If you get a {\f1 Discovered} event, cancel the timer. If the timer expires, then you can be reasonably certain that the Envoy is offline.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Change Log\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Version 7:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Version 12:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Initial release\sa180\par}
 }

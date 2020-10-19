@@ -2,8 +2,13 @@ require("discovery")
 require("envoy")
 require("timer")
 
-function dbg(...)
-   if (Properties['Debug Mode'] == 'On') then print(...) end
+DEBUGLOG = DEBUGLOG or {}
+
+function dbg(str)
+   if (Properties['Debug Mode'] == 'On') then
+      table.insert(DEBUGLOG, str)
+      print(str)
+   end
 end
 
 function OnDriverInit()
@@ -22,6 +27,13 @@ function OnPropertyChanged(strProperty)
    dbg('OnPropertyChanged: ' .. strProperty .. " -> " .. value)
    if (strProperty == "Poll Interval") then
       ENVOY.startPoll()
+   end
+end
+
+function OnBindingChanged(idBinding, strClass, bIsBound)
+   dbg('OnBindingChanged: binding ' .. idBinding .. '(' .. strClass .. ') -> ' .. (bIsBound and 'true' or 'false'))
+   if (bIsBound) then
+      ENVOY.notifyProxy()
    end
 end
 

@@ -30,8 +30,16 @@ function ENVOY.setGridStatus(status)
    if (status == true or string.upper(status) == "CLOSED") then
       strCommand = "CLOSED"
    end
-   dbg("Grid Status is now " .. strCommand)
-   C4:SendToProxy(GRID_STATUS_CONNECTION_BINDINGID, strCommand, {}, "NOTIFY")
+   dbg("Grid Status is " .. strCommand)
+   if (ENVOY.gridStatus ~= strCommand) then
+      ENVOY.gridStatus = strCommand
+      ENVOY.notifyProxy()
+   end
+end
+
+function ENVOY.notifyProxy()
+   dbg("Notifying proxy that grid is now " .. ENVOY.gridStatus)
+   C4:SendToProxy(GRID_STATUS_CONNECTION_BINDINGID, ENVOY.gridStatus, {}, "NOTIFY")
 end
 
 function ENVOY.fetchInfo()
